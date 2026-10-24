@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Car Studio – Dehiwala | Android Players, Dash Cams & Accessories</title>
+<meta name="description" content="Explore Android car players, dash cameras, speakers and vehicle upgrades at Car Studio, Dehiwala. Compare products and request installation quotes on WhatsApp.">
+<meta name="theme-color" content="#0d0e10">
+<meta property="og:title" content="Car Studio | Upgrade Your Drive">
+<meta property="og:description" content="Car audio, Android players, dash cameras and vehicle upgrades in Dehiwala. Explore products and request a quote.">
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@600,700&f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d0e10;--s1:#16181b;--s2:#1e2125;--line:#2a2e33;--tx:#eceef0;--mut:#9aa1a9;--acc:#e8202a;--acc2:#ffb020}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--tx);font-family:Satoshi,system-ui,sans-serif;line-height:1.55}
+h1,h2,h3{font-family:'Clash Display',sans-serif;line-height:1.1;letter-spacing:-.01em}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1200px;margin:auto;padding:0 20px}
+header{position:sticky;top:0;z-index:10;background:rgba(13,14,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:100px;gap:12px;padding-block:8px}
+.logo{display:flex;align-items:center;flex-shrink:0;padding:6px 0}
+.logo img{display:block;width:220px;height:auto}
+.tabs{display:flex;gap:4px}
+.tabs button{background:none;border:0;color:var(--mut);font:500 .95rem Satoshi;padding:9px 14px;border-radius:8px;cursor:pointer}
+.tabs button.on,.tabs button:hover{color:var(--tx);background:var(--s2)}
+.page{display:none}.page.on{display:block}
+.hero{position:relative;min-height:78vh;display:flex;align-items:flex-end;background:url(img/hero.jpg) center/cover}
+.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,14,16,.2),rgba(13,14,16,.95) 85%)}
+.hero .wrap{position:relative;padding-bottom:60px;width:100%}
+.badge{display:inline-block;background:var(--acc);color:#fff;font-weight:700;padding:6px 14px;border-radius:99px;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.6rem,7vw,5.5rem);margin:16px 0 10px;max-width:14ch}
+.hero h1 em{font-style:normal;color:var(--acc)}
+.hero p{color:#c9ced3;font-size:1.15rem;max-width:52ch}
+.hero.carousel{display:block;background:none;min-height:0;overflow:hidden}
+.hero.carousel:before{display:none}
+.hero-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain}
+.hero-track::-webkit-scrollbar{display:none}
+.hero-slide{position:relative;flex:0 0 100%;min-width:0;min-height:70vh;display:flex;align-items:flex-end;scroll-snap-align:start;scroll-snap-stop:always;background:var(--slide-image) center/cover}
+.hero-slide:before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,14,16,.15),rgba(13,14,16,.96) 90%)}
+.hero-slide .wrap{padding-top:48px;padding-bottom:36px}
+.hero-slide h2{font-size:clamp(2.6rem,7vw,5.5rem);margin:16px 0 10px;max-width:16ch}
+.hero-slide h2 em{font-style:normal;color:var(--acc)}
+.feature-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.feature-tags span{border:1px solid #45484c;background:rgba(22,24,27,.75);border-radius:8px;padding:6px 12px;color:#eceef0;font-size:.85rem}
+.carousel-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:16px!important;padding-bottom:20px!important;border-bottom:1px solid var(--line)}
+.carousel-hint{font-size:.85rem;color:var(--mut)}
+.carousel-status{display:flex;align-items:center;gap:12px}
+.autoplay-toggle{min-width:48px;min-height:36px;border:1px solid var(--line);border-radius:8px;background:var(--s2);color:var(--tx);font:500 .75rem Satoshi;cursor:pointer}
+.autoplay-toggle:hover{border-color:var(--acc)}
+.carousel-controls,.carousel-dots{display:flex;align-items:center;gap:8px}
+.slide-arrow{width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:var(--s2);color:var(--tx);font-size:1.4rem;cursor:pointer}
+.slide-arrow:hover{border-color:var(--acc)}
+.slide-dot{display:grid;place-items:center;width:28px;height:44px;border:0;background:transparent;cursor:pointer}
+.slide-dot:after{content:"";width:8px;height:8px;border-radius:99px;background:#666b72;transition:width .2s,background .2s}
+.slide-dot[aria-current="true"]:after{width:24px;background:var(--acc)}
+:focus-visible{outline:2px solid var(--acc2);outline-offset:3px}
+@media(max-width:760px){.hero-slide{min-height:560px}.hero-slide .wrap{padding-top:40px;padding-bottom:28px}.hero-slide p{font-size:1rem}.carousel-hint{font-size:.75rem}.carousel-controls,.carousel-dots{gap:2px}.slide-dot{width:24px}}
+@media(prefers-reduced-motion:reduce){.slide-dot:after{transition:none}}
+@media(max-width:760px){.carousel-bar{padding-right:84px!important}.carousel-hint{font-size:0}.carousel-hint #slide-count{font-size:.75rem;white-space:nowrap}.carousel-controls{flex-shrink:0}.carousel-status{flex-direction:column;gap:0}}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:10px;font-weight:700;border:1px solid var(--line);cursor:pointer;font-family:Satoshi;font-size:1rem;color:var(--tx);background:var(--s2)}
+.btn.p{background:var(--acc);border-color:var(--acc);color:#fff}
+.btn.w{background:#1fa855;border-color:#1fa855;color:#fff}
+section{padding:70px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.sh h2{font-size:clamp(1.8rem,4vw,2.6rem)}
+.sh p{color:var(--mut)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.card{background:var(--s1);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-3px);border-color:#3a3f45}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#111}
+.cb{padding:18px;display:flex;flex-direction:column;gap:10px;flex:1}
+.no{font-size:.75rem;color:var(--acc2);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.card h3{font-size:1.25rem}
+.price{font-family:'Clash Display';font-size:1.5rem;font-weight:700;color:var(--acc)}
+.price small{font-family:Satoshi;font-size:.8rem;color:var(--mut);font-weight:500;margin-left:6px}
+ul.f{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+ul.f li{font-size:.8rem;background:var(--s2);border:1px solid var(--line);padding:4px 9px;border-radius:6px;color:#cfd4d9}
+.tag{font-size:.85rem;color:var(--mut)}
+.card .btn{margin-top:auto;justify-content:center;padding:11px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.box{background:var(--s1);border:1px solid var(--line);border-radius:16px;padding:24px}
+.box h3{font-size:1.1rem;margin-bottom:6px}.box p{color:var(--mut)}
+.box .big{font-size:1.3rem;color:var(--tx);font-weight:700}
+.promo{background:linear-gradient(120deg,#2a0b0d,#16181b 60%);border:1px solid #4a1418;border-radius:20px;padding:36px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center}
+.promo .off{font-family:'Clash Display';font-size:clamp(3.5rem,9vw,7rem);font-weight:700;color:var(--acc);line-height:.9}
+.promo img{width:100%;border-radius:14px}
+.note{background:var(--s2);border-left:4px solid var(--acc2);padding:14px 18px;border-radius:8px;margin:0 0 22px;font-weight:500}
+.job{background:var(--s1);border:1px solid var(--line);border-radius:18px;padding:30px}
+.job .u{display:inline-block;background:var(--acc);color:#fff;font-size:.75rem;font-weight:700;padding:4px 10px;border-radius:6px;letter-spacing:.08em;margin-bottom:12px;animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.55}}
+.job h3{font-size:1.7rem;margin-bottom:14px}
+.job ul{padding-left:20px;color:#cfd4d9;display:grid;gap:6px}
+.perks{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0}
+.perks span{background:var(--s2);border:1px solid var(--line);padding:9px 14px;border-radius:99px;font-weight:500}
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--mut);font-size:.9rem}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.fab{position:fixed;right:18px;bottom:18px;width:56px;height:56px;border-radius:50%;background:#1fa855;display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.4);z-index:20}
+@media(max-width:760px){.promo{grid-template-columns:1fr;padding:24px}.tabs button{padding:8px 14px;font-size:.85rem}.logo img{width:180px}.nav{flex-direction:column;justify-content:center;gap:8px;min-height:0;padding-block:8px}}
+</style>
+<link rel="stylesheet" href="features.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutomotiveBusiness","name":"Car Studio","telephone":"+94777711132","address":{"@type":"PostalAddress","streetAddress":"No. 182, Hill Street","addressLocality":"Dehiwala","addressCountry":"LK"}}</script>
+</head><body>
+<header><div class="wrap nav">
+<a class="logo" href="#" onclick="go('home')" aria-label="Car Studio home">
+<img src="img/car-studio-logo-dark.png" alt="Car Studio: Audio, Accessories, Security, Tint, Stickers" width="1200" height="435" fetchpriority="high"></a>
+<nav class="tabs" aria-label="Main navigation"><button data-p="home" class="on">Home</button><button data-p="products">Products</button><button data-p="services">Services</button><button data-p="gallery">Gallery</button><button data-p="jobs">We're Hiring</button><button data-p="book">Get a Quote</button></nav>
+<div class="header-actions"><button class="quote-trigger" id="basket-trigger" onclick="openQuote()" aria-label="Open quote basket"><span id="basket-label" class="basket-label">Quote</span> <span id="quote-count">0</span></button><button class="theme-toggle" id="theme-toggle" aria-label="Switch colour theme">Light</button></div>
+</div></header>
+
+<main>
+<!-- HOME -->
+<div class="page on" id="home">
+<div class="hero carousel" role="region" aria-roledescription="carousel" aria-label="Car Studio products, upgrades and services">
+<div class="hero-track" id="hero-track" tabindex="0" aria-label="Swipe or use left and right arrow keys to explore features">
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="1 of 5: Android player features" style="--slide-image:url(img/hero.jpg)"><div class="wrap">
+<span class="badge">01 / Android Player Features</span>
+<h1>Android Players <em>30% OFF</em></h1>
+<p>Upgrade your dashboard with an Android car player. Explore YouTube support, WiFi, GPS navigation and big-screen options. Enjoy videos only when safely parked.</p>
+<div class="feature-tags"><span>YouTube support</span><span>WiFi support</span><span>GPS navigation</span><span>9-inch screen options</span></div>
+<div class="btns"><button class="btn p" onclick="go('products')">View Products</button><a class="btn w" href="https://wa.me/94777711132" target="_blank">WhatsApp 077 77 11132</a></div>
+</div></div>
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Dash camera features" style="--slide-image:url(img/p6.jpg)" inert><div class="wrap">
+<span class="badge">02 / Dash Camera Features</span>
+<h2>Record the road. <em>Dash cameras.</em></h2>
+<p>Explore Blaupunkt dash cameras with WiFi, night vision and loop recording. Choose Full HD, 4K front recording or front, cabin and rear options. Rs. 25,000 per camera.</p>
+<div class="feature-tags"><span>Full HD / 4K options</span><span>Built-in WiFi</span><span>Night vision</span><span>Loop recording</span></div>
+<div class="btns"><button class="btn p" onclick="go('products')">Explore Dash Cameras</button><a class="btn w" href="https://wa.me/94777711132?text=Hi%20Car%20Studio%2C%20I%20am%20interested%20in%20your%20dash%20cameras." target="_blank">Ask on WhatsApp</a></div>
+</div></div>
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Interior plastic protection film" style="--slide-image:url(img/film-hero.jpg)" inert><div class="wrap">
+<span class="badge">03 / Interior Protection</span>
+<h2>Care for your cabin. <em>Protection film.</em></h2>
+<p>Interior plastic protection film for your car's trim. Talk to our team about suitable surfaces, film options and application pricing.</p>
+<div class="feature-tags"><span>Interior plastic trim</span><span>Protection film</span><span>Ask about fitting</span></div>
+<div class="btns"><a class="btn p" href="https://wa.me/94777711132?text=Hi%20Car%20Studio%2C%20I%20want%20interior%20plastic%20protection%20film.%20Please%20share%20options%20and%20pricing." target="_blank">Enquire About Film</a><a class="btn" href="tel:+94777711132">Call Our Team</a></div>
+</div></div>
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Branded speaker upgrades" style="--slide-image:url(img/speakers-hero.jpg)" inert><div class="wrap">
+<span class="badge">04 / Branded Speaker Upgrades</span>
+<h2>Upgrade your drive. <em>Branded speakers.</em></h2>
+<p>Explore car speaker upgrades from JBL, Infinity, Pioneer and Kenwood. Ask our team about available models, vehicle fit and pricing.</p>
+<div class="feature-tags"><span>JBL</span><span>Infinity</span><span>Pioneer</span><span>Kenwood</span></div>
+<div class="btns"><a class="btn p" href="https://wa.me/94777711132?text=Hi%20Car%20Studio%2C%20I%20am%20interested%20in%20JBL%2C%20Infinity%2C%20Pioneer%20or%20Kenwood%20speaker%20upgrades.%20Please%20share%20available%20models%20and%20prices." target="_blank">Enquire About Speakers</a><a class="btn" href="tel:+94777711132">Call Our Team</a></div>
+</div></div>
+<div class="hero-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Sound system upgrades with subwoofer" style="--slide-image:url(img/subwoofer-hero.jpg)" inert><div class="wrap">
+<span class="badge">05 / Subwoofer Sound Upgrades</span>
+<h2>Turn up the bass. <em>Subwoofer upgrades.</em></h2>
+<p>Upgrade your car sound system with a subwoofer. Discuss compatible options, available trunk space and installation with the Car Studio team.</p>
+<div class="feature-tags"><span>Subwoofer upgrades</span><span>Sound system setup</span><span>Ask about installation</span></div>
+<div class="btns"><a class="btn p" href="https://wa.me/94777711132?text=Hi%20Car%20Studio%2C%20I%20want%20to%20upgrade%20my%20car%20sound%20system%20with%20a%20subwoofer.%20Please%20share%20options%20and%20pricing." target="_blank">Plan My Sound Upgrade</a><a class="btn" href="tel:+94777711132">Call Our Team</a></div>
+</div></div>
+</div>
+<div class="wrap carousel-bar">
+<div class="carousel-status">
+<span class="carousel-hint">Changes every 2 seconds &middot; <span id="slide-count" aria-live="off">01 / 05</span></span>
+<button class="autoplay-toggle" id="autoplay-toggle" aria-label="Pause automatic slides">Pause</button>
+</div>
+<div class="carousel-controls">
+<button class="slide-arrow" id="slide-prev" aria-label="Previous feature slide" aria-controls="hero-track">&#8249;</button>
+<div class="carousel-dots" aria-label="Choose a feature slide">
+<button class="slide-dot" aria-label="Show Android player features" aria-current="true" data-slide="0"></button>
+<button class="slide-dot" aria-label="Show dash camera features" aria-current="false" data-slide="1"></button>
+<button class="slide-dot" aria-label="Show interior plastic protection film" aria-current="false" data-slide="2"></button>
+<button class="slide-dot" aria-label="Show branded speaker upgrades" aria-current="false" data-slide="3"></button>
+<button class="slide-dot" aria-label="Show subwoofer sound upgrades" aria-current="false" data-slide="4"></button>
+</div>
+<button class="slide-arrow" id="slide-next" aria-label="Next feature slide" aria-controls="hero-track">&#8250;</button>
+</div>
+</div>
+</div>
+
+<div class="assurance-strip wrap">
+<span><b>Installed for your vehicle</b><small>Ask us about compatibility</small></span>
+<span><b>Islandwide delivery</b><small>Request delivery charges</small></span>
+<span><b>Cash on delivery</b><small>Available on listed products</small></span>
+<span><b>Model-specific warranty</b><small>See individual product details</small></span>
+</div>
+<section class="home-service-preview"><div class="wrap">
+<div class="sh"><div><span class="eyebrow">More than a product upgrade</span><h2>Built around your car.</h2><p>Choose your upgrade. Tell us your vehicle. Let the team advise on fit.</p></div><button class="btn" onclick="go('services')">Explore Services</button></div>
+<div class="service-mini-grid">
+<button onclick="chooseService('Android player installation')"><span>01</span><b>Smarter dashboard</b><small>Android players and connectivity</small></button>
+<button onclick="chooseService('Speaker upgrade')"><span>02</span><b>Sound that fits your drive</b><small>Speakers and subwoofer upgrades</small></button>
+<button onclick="chooseService('Interior protection film')"><span>03</span><b>Care for your cabin</b><small>Interior plastic protection film</small></button>
+</div></div></section>
+<section><div class="wrap">
+<div class="promo">
+<div><span class="badge">Special Sale</span><div class="off" style="margin:14px 0">30% OFF</div><h2 style="font-size:1.8rem;margin-bottom:10px">All Android Car Players</h2><p style="color:#c9ced3">GPS navigation, YouTube, WiFi, steering control and more. Installation available. Warranty included.</p><div class="btns"><button class="btn p" onclick="go('products')">Shop Now</button></div></div>
+<img src="img/p3.jpg" alt="9 inch Android car stereo">
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="sh"><h2>Our Products</h2><button class="btn" onclick="go('products')">See all prices &rarr;</button></div>
+<div class="grid" id="homegrid"></div>
+<div class="brand-strip" aria-label="Ask about available brands"><span>Ask about models from</span><b>JBL</b><b>INFINITY</b><b>PIONEER</b><b>KENWOOD</b><b>LENOVO</b><b>BLAUPUNKT</b></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+<div class="sh"><h2>Visit Our Shop</h2></div>
+<div class="info">
+<div class="box"><h3>Address</h3><p class="big">Car Studio<br>No. 182, Hill Street,<br>Dehiwala, Sri Lanka</p></div>
+<div class="box"><h3>Call / WhatsApp</h3><p class="big"><a href="tel:+94777711132">077 77 11132</a></p><p>+94 77 771 1132</p></div>
+<div class="box"><h3>Services</h3><p>Professional installation &middot; Cash on delivery &middot; Islandwide delivery &middot; Warranty on players</p></div>
+</div>
+<iframe title="Map" style="width:100%;height:320px;border:0;border-radius:16px;margin-top:18px;filter:grayscale(.3)" loading="lazy" src="https://maps.google.com/maps?q=182%20Hill%20Street%20Dehiwala%20Sri%20Lanka&output=embed"></iframe>
+<div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=182+Hill+Street+Dehiwala+Sri+Lanka" target="_blank" rel="noopener">Get Directions</a><button class="btn p" onclick="go('book')">Request an Installation</button></div>
+</div></section>
+<section class="faq-section"><div class="wrap">
+<div class="sh"><div><span class="eyebrow">Before you upgrade</span><h2>Your questions, answered.</h2></div></div>
+<div class="faq-list">
+<details><summary>Will an Android player fit my vehicle?</summary><p>Fit depends on your vehicle model, dashboard frame and wiring. Tell us your make, model and year so our team can advise before you order.</p></details>
+<details><summary>What warranty is included?</summary><p>The YD and Kenwood players list a 3-month warranty. The Lenovo D1 4GB / 64GB player lists a 1-year warranty. A warranty was not specified for every other product; ask us to confirm the exact cover and terms.</p></details>
+<details><summary>Can I pay cash on delivery?</summary><p>Cash on delivery is available for the listed Android players. Ask our team to confirm availability for other products, your address and any delivery charges before ordering.</p></details>
+<details><summary>Is installation included in the product price?</summary><p>Installation is available for the listed Android players. The snail-shaped horn lists installation included. Ask us to confirm labour, fitting accessories and the final installed price for your vehicle.</p></details>
+<details><summary>Does the 30% offer mean another discount on the listed prices?</summary><p>The banner advertises the Android-player offer and the catalogue shows the supplied special prices. Please confirm the final offer with the team; this website does not apply an additional automatic discount.</p></details>
+<details><summary>Can I book a confirmed appointment on this website?</summary><p>You can prepare an installation request with a preferred date and send it through WhatsApp. Your slot is only confirmed after the Car Studio team replies.</p></details>
+</div>
+<div class="updates-panel"><div><h3>Want the next offer?</h3><p>Ask the team about new products and offers on WhatsApp.</p></div><a class="btn w" href="https://wa.me/94777711132?text=Hi%20Car%20Studio%2C%20please%20tell%20me%20about%20new%20products%20and%20offers." target="_blank" rel="noopener">Ask About Updates</a></div>
+</div></section>
+</div>
+
+<!-- PRODUCTS -->
+<div class="page" id="products"><section><div class="wrap">
+<div class="sh"><div><h2>Products</h2><p>Installation available &middot; Cash on delivery &middot; Islandwide delivery</p></div><a class="btn w" href="https://wa.me/94777711132" target="_blank">Order on WhatsApp</a></div>
+<div class="note">Note: All Blaupunkt dash cameras cost Rs. 25,000 per camera.</div>
+<div class="delivery-mode-bar"><div><b>Shopping for delivery?</b><p>Add different products, choose quantities and send one combined order request.</p></div><div class="order-mode-buttons" aria-label="Shopping mode"><button data-order-mode="quote" class="active" aria-pressed="true">Get a Quote</button><button data-order-mode="delivery" aria-pressed="false">Delivery Order</button></div></div>
+<div class="catalogue-tools">
+<label class="search-field">Search products<input id="product-search" type="search" placeholder="Try Lenovo, WiFi, 4K or horn" autocomplete="off"></label>
+<label>Brand<select id="brand-filter"><option value="">All brands</option><option>YD</option><option>Kenwood</option><option>Lenovo</option><option>Blaupunkt</option><option>Other</option></select></label>
+<label>Budget<select id="budget-filter"><option value="">All prices</option><option value="20000">Up to Rs. 20,000</option><option value="25000">Up to Rs. 25,000</option><option value="35000">Up to Rs. 35,000</option><option value="unknown">Price on enquiry</option></select></label>
+<label>Sort<select id="sort-products"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="name">Name: A to Z</option></select></label>
+</div>
+<div class="category-filters" id="category-filters" aria-label="Product categories">
+<button class="active" data-category="all" aria-pressed="true">All products</button><button data-category="players" aria-pressed="false">Android players</button><button data-category="cameras" aria-pressed="false">Dash cameras</button><button data-category="horns" aria-pressed="false">Horns</button><button data-category="saved" aria-pressed="false">Saved <span id="saved-count">0</span></button>
+</div>
+<div class="catalogue-summary"><span id="result-count" aria-live="polite">8 products</span><button class="text-btn" id="reset-filters">Reset filters</button><button class="text-btn" onclick="openComparison()">Compare selected <span id="compare-count">0 / 3</span></button></div>
+<div class="grid" id="grid"></div>
+<div id="no-products" class="empty-state" hidden><h3>No matching products</h3><p>Try a different keyword, category or budget.</p><button class="btn" onclick="resetFilters()">Reset filters</button></div>
+<p class="catalogue-disclosure">Product pictures are AI-generated illustrations, not photographs of current stock. Confirm appearance, compatibility, availability and final pricing with our team.</p>
+</div></section></div>
+
+<div class="page" id="services"><section><div class="wrap">
+<div class="sh"><div><span class="eyebrow">Your car. Your upgrade.</span><h2>Services &amp; Installation</h2><p>From connected dashboards to better audio and interior care. Request a vehicle-specific quote.</p></div><button class="btn p" onclick="go('book')">Request a Quote</button></div>
+<div class="service-grid" id="service-grid"></div>
+<div class="process-panel"><span class="eyebrow">How it works</span><h2>From idea to installation.</h2><div class="process-grid"><div><b>01 / Tell us your vehicle</b><p>Share make, model, year and the upgrade you want.</p></div><div><b>02 / Confirm the fit &amp; quote</b><p>Our team confirms compatible options, pricing and a suitable date.</p></div><div><b>03 / Visit Car Studio</b><p>Come to No. 182, Hill Street, Dehiwala after your appointment is confirmed.</p></div></div></div>
+</div></section></div>
+
+<div class="page" id="gallery"><section><div class="wrap">
+<div class="sh"><div><span class="eyebrow">Explore the possibilities</span><h2>Upgrade Inspiration</h2><p>AI-generated concepts to help you plan your upgrade. These are not photos of completed Car Studio installations.</p></div><button class="btn p" onclick="go('book')">Plan My Upgrade</button></div>
+<div class="category-filters" id="gallery-filters" aria-label="Inspiration categories"><button data-gallery="all" class="active" aria-pressed="true">All concepts</button><button data-gallery="dashboard" aria-pressed="false">Dashboard</button><button data-gallery="audio" aria-pressed="false">Audio</button><button data-gallery="protection" aria-pressed="false">Protection</button><button data-gallery="cameras" aria-pressed="false">Cameras</button></div>
+<div class="gallery-grid" id="gallery-grid"></div>
+</div></section></div>
+
+<div class="page" id="book"><section><div class="wrap">
+<div class="sh"><div><span class="eyebrow">Let's find the right fit</span><h2>Get a Quote / Installation Request</h2><p>Prepare your request here. Review it before opening WhatsApp.</p></div></div>
+<div class="booking-layout">
+<form id="request-form" class="request-form">
+<div class="form-grid">
+<label>Your name<input name="customer" required maxlength="80" autocomplete="name" placeholder="Your name"></label>
+<label>Phone / WhatsApp<input name="phone" type="tel" required pattern="[+0-9\s\(\)\-]{7,20}" maxlength="20" autocomplete="tel" placeholder="077 123 4567"></label>
+<label>Vehicle make<input name="make" required maxlength="60" placeholder="Toyota, Honda, Suzuki..."></label>
+<label>Vehicle model<input name="model" required maxlength="80" placeholder="Aqua, Vezel, Wagon R..."></label>
+<label>Vehicle year<input name="year" type="number" min="1950" max="2027" placeholder="2020"></label>
+<label>Upgrade / service<select name="service" id="request-service" required><option value="">Choose an upgrade</option><option>Android player installation</option><option>Dash camera installation</option><option>Interior protection film</option><option>Speaker upgrade</option><option>Subwoofer upgrade</option><option>Window / windscreen tinting</option><option>Horn installation</option><option>General product enquiry</option></select></label>
+<label>Preferred date (optional)<input name="date" id="request-date" type="date"></label>
+<label>Approximate budget (optional)<select name="budget"><option value="">Not sure yet</option><option>Under Rs. 25,000</option><option>Rs. 25,000 - 50,000</option><option>Over Rs. 50,000</option></select></label>
+<label class="full-field">Anything else?<textarea name="notes" rows="4" maxlength="1000" placeholder="Product name, dashboard size, preferred sound setup or delivery needs..."></textarea></label>
+</div>
+<p class="form-note">This form does not reserve a slot or charge you. Details are kept in this page until you choose to send them through WhatsApp.</p>
+<button class="btn p" type="submit">Review My Request</button>
+</form>
+<aside class="booking-aside"><div class="box"><span class="eyebrow">Visit Car Studio</span><h3>No. 182, Hill Street<br>Dehiwala, Sri Lanka</h3><p>For opening hours and appointment availability, please call or message the team.</p><a class="btn w" href="tel:+94777711132">Call 077 77 11132</a></div><div class="box"><h3>Already comparing products?</h3><p>Add products to your quote basket, adjust quantities and send one combined enquiry.</p><button class="btn" onclick="openQuote()">Open Quote Basket</button></div></aside>
+</div>
+</div></section></div>
+
+<!-- JOBS -->
+<div class="page" id="jobs"><section><div class="wrap">
+<div class="sh"><div><h2>We Are Hiring</h2><p>Join the Car Studio team in Dehiwala</p></div></div>
+<div class="info" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+<div class="job"><span class="u">URGENT</span><h3>01. Tint Applicator</h3><ul><li>Windscreen tinting</li><li>Window tinting</li><li>Protection film application</li><li>Sticker application</li><li>Clean and professional finishing</li></ul></div>
+<div class="job"><span class="u">URGENT</span><h3>02. Auto Electrician</h3><p style="color:var(--mut);margin-bottom:10px">Must be able to do:</p><ul><li>Android player installation</li><li>360 camera installation</li><li>Fog light and wiring installation</li><li>Vehicle electrical work</li><li>Accessory wiring installation</li></ul></div>
+</div>
+<div class="perks"><span>Immediate joining preferred</span><span>Attractive salary if you work hard</span><span>Friendly team</span><span>Great work environment</span></div>
+<div class="box"><h3>Apply Now</h3><p class="big">Car Studio, No. 182, Hill Street, Dehiwala</p><div class="btns"><a class="btn p" href="tel:+94777711132">Call 077 77 11132</a><a class="btn w" href="https://wa.me/94777711132?text=Hi%20Car%20Studio%2C%20I%20want%20to%20apply%20for%20the%20job" target="_blank">WhatsApp</a></div></div>
+</div></section></div>
+</main>
+
+<dialog id="product-dialog" class="site-dialog" aria-label="Product details"><button class="dialog-close" onclick="closeDialog('product-dialog')" aria-label="Close product details">Close</button><div id="product-detail"></div></dialog>
+<dialog id="compare-dialog" class="site-dialog wide-dialog" aria-label="Compare products"><button class="dialog-close" onclick="closeDialog('compare-dialog')" aria-label="Close comparison">Close</button><div id="comparison-content"></div></dialog>
+<dialog id="quote-dialog" class="site-dialog quote-dialog" aria-label="Quote basket"><button class="dialog-close" onclick="closeDialog('quote-dialog')" aria-label="Close basket">Close</button><span class="eyebrow">One message. All your choices.</span><h2 id="basket-title">Your Quote Basket</h2><p class="muted" id="basket-intro">An enquiry list, not a paid or confirmed order.</p>
+<div class="order-mode-buttons basket-mode" aria-label="Basket mode"><button data-order-mode="quote" class="active" aria-pressed="true">Get a Quote</button><button data-order-mode="delivery" aria-pressed="false">Delivery Order</button></div>
+<button class="text-btn" onclick="closeDialog('quote-dialog');go('products')">Add More Products</button>
+<div id="quote-content"></div>
+<form id="delivery-form" class="delivery-form" hidden>
+<h3>Where should we deliver?</h3><p class="form-note">Islandwide delivery is available. The team will confirm stock, delivery charges, payment and dispatch timing.</p>
+<div class="form-grid">
+<label>Recipient name<input name="recipient" required autocomplete="name" maxlength="80" placeholder="Full name"></label>
+<label>Phone / WhatsApp<input name="contact" type="tel" required pattern="[+0-9\s\(\)\-]{7,20}" maxlength="20" autocomplete="tel" placeholder="077 123 4567"></label>
+<label class="full-field">Street address<input name="street" required autocomplete="address-line1" maxlength="180" placeholder="House number and street"></label>
+<label class="full-field">Address line 2 (optional)<input name="address2" autocomplete="address-line2" maxlength="120" placeholder="Apartment, village or landmark"></label>
+<label>Town / city<input name="city" required autocomplete="address-level2" maxlength="80" placeholder="Your town or city"></label>
+<label>District<input name="district" required autocomplete="address-level1" maxlength="80" placeholder="Your district"></label>
+<label>Postal code (optional)<input name="postcode" inputmode="numeric" maxlength="12" autocomplete="postal-code" placeholder="Postal code"></label>
+<label>Payment preference<select name="payment"><option value="Cash on delivery requested; please confirm availability">Cash on delivery requested</option><option value="Please discuss available payment methods with me">Discuss with the team</option></select></label>
+<label class="full-field">Delivery notes (optional)<textarea name="instructions" rows="3" maxlength="800" placeholder="Landmark, contact instructions or anything else..."></textarea></label>
+</div>
+<label class="delivery-consent"><input name="acknowledgement" type="checkbox" required><span>I understand this is an order request. Stock, delivery charges and the final total must be confirmed by Car Studio.</span></label>
+<button type="submit" class="btn p">Review Delivery Order</button>
+<p class="form-note">Your details stay in this page until you choose to send the draft through WhatsApp. No payment is taken here.</p>
+</form>
+</dialog>
+<dialog id="delivery-review-dialog" class="site-dialog" aria-label="Review delivery order"><button class="dialog-close" onclick="closeDialog('delivery-review-dialog')" aria-label="Close delivery review">Close</button><span class="eyebrow">Check before you send</span><h2>Review Your Delivery Order</h2><p class="muted">Products, quantities and address in one message.</p><textarea id="delivery-preview" class="message-preview" rows="14" readonly aria-label="Delivery order message preview"></textarea><p class="form-note">This opens a WhatsApp draft, not an automatic order or payment. Car Studio must reply to confirm availability, delivery charges and the final total.</p><div class="detail-actions"><button class="btn" onclick="editDeliveryOrder()">Edit Order / Address</button><a id="send-delivery" class="btn w" target="_blank" rel="noopener">Continue to WhatsApp</a></div></dialog>
+<dialog id="request-dialog" class="site-dialog" aria-label="Review installation request"><button class="dialog-close" onclick="closeDialog('request-dialog')" aria-label="Close request review">Close</button><span class="eyebrow">Check before you send</span><h2>Your Installation Request</h2><textarea id="request-preview" class="message-preview" readonly rows="12" aria-label="WhatsApp request preview"></textarea><p class="form-note">Opening WhatsApp does not send the message automatically. Your appointment is confirmed only after the team replies.</p><a id="send-request" class="btn w" target="_blank" rel="noopener">Continue to WhatsApp</a></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+<footer><div class="wrap"><span>&copy; 2026 Car Studio &middot; No. 182, Hill Street, Dehiwala</span><span>Call / WhatsApp: 077 77 11132</span></div></footer>
+<a class="fab" href="https://wa.me/94777711132" target="_blank" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg></a>
+
+<script>
+const W="https://wa.me/94777711132?text=";
+const P=[
+{n:"YD Android Player",img:"p1",price:"Rs. 19,000",lbl:"Special Price",f:["Android System","2GB RAM","32GB Storage","WiFi Support","GPS Navigation","YouTube Support","Steering Control","FM Radio","EQ Sound Settings","3 Months Warranty"],t:"Installation available · Cash on delivery"},
+{n:"Kenwood Multimedia Android Player",img:"p2",price:"Rs. 23,000",f:["Android System","2GB RAM","32GB Storage","WiFi Support","GPS Ready","FM Radio","3 Months Warranty"],t:"Installation available · Cash on delivery"},
+{n:"Lenovo D1 Android Car Stereo 9\"",img:"p3",price:"Rs. 34,000",lbl:"Special Offer",f:["9 Inch Big Screen","Clear Display","Smooth Performance","Android System","WiFi Support","2GB RAM + 32GB Storage"],t:"Installation available · Cash on delivery"},
+{n:"Lenovo D1 Android Car Stereo 4GB",img:"p4",price:"Call for Price",f:["Android System","4GB RAM","64GB Storage","WiFi Support","1 Year Warranty"],t:"Installation available · Cash on delivery available"},
+{n:"Blaupunkt Dash Camera",img:"p5",price:"Rs. 25,000",sub:"Record. Protect. Drive Confidently.",f:["Full HD 1080P","Built-in WiFi","140° Wide Lens","Night Vision","Loop Recording"],t:"Islandwide delivery available"},
+{n:"Blaupunkt 3-Channel Dash Camera",img:"p6",price:"Rs. 25,000",sub:"Front + Cabin + Rear recording. Complete protection for every journey.",f:["4K Ultra HD Front","Full HD Cabin","Full HD Rear","WiFi Built-in","Night Vision","Loop Recording","Parking Monitor"],t:"Islandwide delivery included"},
+{n:"Blaupunkt Dual Lens DVR 4K",img:"p7",price:"Rs. 25,000",sub:"Front and rear recording for complete protection.",f:["4K Ultra HD Front","Built-in WiFi","140° Wide Angle","Night Vision","Loop Recording","Accident Evidence","Anti-Theft Parking Monitor","Supports SD Cards","View & Download on Phone App"],t:"Islandwide delivery"},
+{n:"Snail Shaped Horn",img:"p8",price:"Call for Price",sub:"Ready to be heard.",f:["Snail Shaped Design","Powerful Dual Tone Sound","Weatherproof Design","Fast & Loud Response","Long Lasting Performance"],t:"Installation included · Islandwide delivery"}];
+const card=(p,i,full)=>`<article class="card"><img src="img/${p.img}.jpg" alt="${p.n}" loading="lazy"><div class="cb"><span class="no">Product No. ${i+1}</span><h3>${p.n}</h3>${p.sub&&full?`<p class="tag">${p.sub}</p>`:""}<div class="price">${p.price}${p.lbl?`<small>${p.lbl}</small>`:""}</div>${full?`<ul class="f">${p.f.map(x=>`<li>${x}</li>`).join("")}</ul><p class="tag">${p.t}</p>`:""}<a class="btn ${full?'w':''}" target="_blank" href="${W+encodeURIComponent('Hi Car Studio, I am interested in Product No. '+(i+1)+': '+p.n)}">${full?'Order on WhatsApp':'Enquire'}</a></div></article>`;
+grid.innerHTML=P.map((p,i)=>card(p,i,1)).join("");
+homegrid.innerHTML=P.map((p,i)=>card(p,i,0)).join("");
+function go(id){document.querySelectorAll('.page').forEach(e=>e.classList.toggle('on',e.id==id));document.querySelectorAll('.tabs button').forEach(b=>{b.classList.toggle('on',b.dataset.p==id);if(b.dataset.p===id)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current')});scrollTo(0,0);scheduleAutoplay()}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>go(b.dataset.p));
+const heroTrack=document.getElementById('hero-track');
+const heroSlides=[...heroTrack.querySelectorAll('.hero-slide')];
+const heroDots=[...document.querySelectorAll('.slide-dot')];
+let heroIndex=0;
+let autoplayTimer=null;
+let settleTimer=null;
+let autoplayPaused=false;
+let draggingHero=false;
+const autoplayToggle=document.getElementById('autoplay-toggle');
+function scheduleAutoplay(){
+  clearTimeout(autoplayTimer);
+  if(autoplayPaused||draggingHero||document.hidden||!document.getElementById('home').classList.contains('on'))return;
+  autoplayTimer=setTimeout(()=>slideTo(heroIndex+1),2000);
+}
+function updateHero(){
+  if(!heroTrack.clientWidth)return;
+  heroIndex=Math.max(0,Math.min(heroSlides.length-1,Math.round(heroTrack.scrollLeft/heroTrack.clientWidth)));
+  heroDots.forEach((dot,i)=>dot.setAttribute('aria-current',String(i===heroIndex)));
+  heroSlides.forEach((slide,i)=>{slide.inert=i!==heroIndex;});
+  document.getElementById('slide-count').textContent=String(heroIndex+1).padStart(2,'0')+' / 05';
+}
+function slideTo(index){
+  clearTimeout(autoplayTimer);
+  heroIndex=(index+heroSlides.length)%heroSlides.length;
+  heroSlides[heroIndex].inert=false;
+  heroTrack.scrollTo({left:heroIndex*heroTrack.clientWidth,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+  scheduleAutoplay();
+}
+document.getElementById('slide-prev').onclick=()=>slideTo(heroIndex-1);
+document.getElementById('slide-next').onclick=()=>slideTo(heroIndex+1);
+heroDots.forEach(dot=>dot.onclick=()=>slideTo(Number(dot.dataset.slide)));
+heroTrack.addEventListener('scroll',()=>{
+  clearTimeout(autoplayTimer);
+  clearTimeout(settleTimer);
+  updateHero();
+  settleTimer=setTimeout(scheduleAutoplay,100);
+},{passive:true});
+heroTrack.addEventListener('scrollend',()=>{
+  clearTimeout(settleTimer);
+  scheduleAutoplay();
+});
+autoplayToggle.addEventListener('click',()=>{
+  autoplayPaused=!autoplayPaused;
+  autoplayToggle.textContent=autoplayPaused?'Play':'Pause';
+  autoplayToggle.setAttribute('aria-label',autoplayPaused?'Resume automatic slides':'Pause automatic slides');
+  document.getElementById('slide-count').setAttribute('aria-live',autoplayPaused?'polite':'off');
+  scheduleAutoplay();
+});
+heroTrack.addEventListener('pointerdown',()=>{
+  draggingHero=true;
+  clearTimeout(autoplayTimer);
+});
+function finishHeroGesture(){
+  if(!draggingHero)return;
+  draggingHero=false;
+  scheduleAutoplay();
+}
+document.addEventListener('pointerup',finishHeroGesture);
+document.addEventListener('pointercancel',finishHeroGesture);
+document.addEventListener('visibilitychange',scheduleAutoplay);
+heroTrack.addEventListener('keydown',event=>{
+  if(event.key==='ArrowRight'||event.key==='ArrowLeft'){
+    event.preventDefault();
+    slideTo(heroIndex+(event.key==='ArrowRight'?1:-1));
+  }
+});
+new ResizeObserver(()=>{
+  if(heroTrack.clientWidth)heroTrack.scrollTo({left:heroIndex*heroTrack.clientWidth,behavior:'instant'});
+}).observe(heroTrack);
+scheduleAutoplay();
+</script>
+<script src="features.js"></script>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body></html>
