@@ -180,3 +180,18 @@ select{color-scheme:dark}
   .toast{bottom:84px;max-width:calc(100% - 32px);width:max-content}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
+
+/* open-now pill + sticky mobile contact bar */
+.open-pill{display:inline-block;padding:6px 12px;border-radius:99px;font-size:.85rem;font-weight:700;background:var(--s2);color:var(--mut);border:1px solid var(--line)}
+.open-pill.is-open{color:#2fd27a;border-color:#2fd27a}
+.open-pill:empty{display:none}
+.mobile-bar{display:none}
+@media(max-width:700px){
+  .mobile-bar{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;align-items:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--s1);border-top:1px solid var(--line)}
+  .mobile-bar a{flex:1;text-align:center;font-weight:700;padding:11px 8px;border-radius:10px;color:#fff}
+  .mobile-bar .mb-call{background:var(--acc)}
+  .mobile-bar .mb-wa{background:#1fa855}
+  .mobile-bar .open-pill{flex:1.4;font-size:.72rem;text-align:center;padding:6px}
+  .fab{display:none}
+  body{padding-bottom:70px}
+}

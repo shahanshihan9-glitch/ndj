@@ -281,3 +281,72 @@ document.getElementById('theme-toggle').addEventListener('click',()=>{currentThe
 applyTheme();
 renderProducts();
 renderGallery();
+
+/* ---- Vehicle picker: suggestions for make/model, remembered for next visit ---- */
+const VEHICLES={
+  Toyota:['Aqua','Prius','Axio','Allion','Premio','Vitz','Corolla','CHR','Hilux','Land Cruiser Prado','Rush','Passo'],
+  Honda:['Vezel','Fit','Grace','Civic','CR-V','Insight','Freed','Airwave'],
+  Suzuki:['Wagon R','Alto','Swift','Spacia','Every','Hustler','Jimny','Celerio'],
+  Nissan:['Leaf','March','Sunny','X-Trail','Juke','Note','Sylphy','Dayz'],
+  Mitsubishi:['Montero','Outlander','Lancer','Pajero','Mirage','L200'],
+  Mazda:['Axela','Demio','CX-5','Premacy','Carol'],
+  Micro:['Panda','Trend','Tiivolo','Emgrand'],
+  Daihatsu:['Mira','Move','Hijet','Tanto'],
+  Kia:['Picanto','Sportage','Sorento'],
+  Hyundai:['Eon','Tucson','Santa Fe','Elantra'],
+  Perodua:['Axia','Bezza','Myvi'],
+  Tata:['Nano','Indica','Nexon'],
+  Subaru:['Impreza','Forester','XV']
+};
+document.getElementById('make-list').innerHTML=Object.keys(VEHICLES).map(m=>`<option value="${m}">`).join('');
+const makeInput=document.querySelector('#request-form [name="make"]');
+const modelInput=document.querySelector('#request-form [name="model"]');
+function refreshModels(){
+  const key=Object.keys(VEHICLES).find(m=>m.toLowerCase()===makeInput.value.trim().toLowerCase());
+  document.getElementById('model-list').innerHTML=(key?VEHICLES[key]:[]).map(m=>`<option value="${m}">`).join('');
+}
+makeInput.addEventListener('input',refreshModels);
+const yearInput=document.querySelector('#request-form [name="year"]');
+let savedVehicle=null;
+try{savedVehicle=JSON.parse(localStorage.getItem('cs-vehicle')||'null');}catch(e){}
+if(savedVehicle&&savedVehicle.make){
+  makeInput.value=savedVehicle.make;modelInput.value=savedVehicle.model||'';yearInput.value=savedVehicle.year||'';refreshModels();
+}
+document.getElementById('request-form').addEventListener('submit',()=>{
+  const v={make:makeInput.value.trim(),model:modelInput.value.trim(),year:yearInput.value};
+  savedVehicle=v;
+  try{localStorage.setItem('cs-vehicle',JSON.stringify(v));}catch(e){}
+});
+const baseQuoteMessage=quoteMessage;
+quoteMessage=function(){
+  const msg=baseQuoteMessage();
+  if(!savedVehicle||!savedVehicle.make)return msg;
+  const veh=[savedVehicle.make,savedVehicle.model,savedVehicle.year].filter(Boolean).join(' ');
+  return msg.replace('please quote for:',`please quote for my ${veh}:`);
+};
+
+/* ---- Open-now badge: hours come from the JSON-LD block in index.html (Sri Lanka time) ---- */
+(function(){
+  const spec=JSON.parse(document.getElementById('ld-business').textContent).openingHoursSpecification;
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const mins=t=>{const [h,m]=t.split(':').map(Number);return h*60+m;};
+  const fmt=t=>{let [h,m]=t.split(':').map(Number);const ap=h>=12?'pm':'am';h=h%12||12;return h+(m?':'+String(m).padStart(2,'0'):'')+ap;};
+  function status(){
+    const parts=new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Colombo',weekday:'long',hour:'numeric',minute:'numeric',hourCycle:'h23'}).formatToParts(new Date());
+    const get=t=>parts.find(p=>p.type===t).value;
+    const day=get('weekday'),now=Number(get('hour'))*60+Number(get('minute'));
+    const today=spec.find(s=>s.dayOfWeek.includes(day));
+    if(today&&now>=mins(today.opens)&&now<mins(today.closes))return{open:true,text:'Open now · closes '+fmt(today.closes)};
+    if(today&&now<mins(today.opens))return{open:false,text:'Closed · opens today '+fmt(today.opens)};
+    for(let i=1;i<=7;i++){
+      const name=days[(days.indexOf(day)+i)%7],s=spec.find(x=>x.dayOfWeek.includes(name));
+      if(s)return{open:false,text:'Closed · opens '+(i===1?'tomorrow':name)+' '+fmt(s.opens)};
+    }
+    return{open:false,text:'Closed'};
+  }
+  function paint(){
+    const s=status();
+    document.querySelectorAll('[data-open-status]').forEach(el=>{el.textContent=s.text;el.classList.toggle('is-open',s.open);});
+  }
+  paint();setInterval(paint,60000);
+})();

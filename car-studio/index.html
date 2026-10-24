@@ -96,7 +96,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 @media(max-width:760px){.promo{grid-template-columns:1fr;padding:24px}.tabs button{padding:8px 14px;font-size:.85rem}.logo img{width:180px}.nav{flex-direction:column;justify-content:center;gap:8px;min-height:0;padding-block:8px}}
 </style>
 <link rel="stylesheet" href="features.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"AutomotiveBusiness","name":"Car Studio","telephone":"+94777711132","address":{"@type":"PostalAddress","streetAddress":"No. 182, Hill Street","addressLocality":"Dehiwala","addressCountry":"LK"}}</script>
+<script type="application/ld+json" id="ld-business">{"@context":"https://schema.org","@type":"AutomotiveBusiness","name":"Car Studio","description":"Android car players, dash cameras, speakers, subwoofers, window tinting and interior protection film in Dehiwala, Sri Lanka.","telephone":"+94777711132","priceRange":"Rs.","image":"img/hero.jpg","logo":"img/car-studio-logo.png","address":{"@type":"PostalAddress","streetAddress":"No. 182, Hill Street","addressLocality":"Dehiwala","addressCountry":"LK"},"areaServed":{"@type":"Country","name":"Sri Lanka"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"19:00"}]}</script>
 </head><body>
 <header><div class="wrap nav">
 <a class="logo" href="#" onclick="go('home')" aria-label="Car Studio home">
@@ -191,7 +191,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
-<div class="sh"><h2>Visit Our Shop</h2></div>
+<div class="sh"><h2>Visit Our Shop</h2><span class="open-pill" data-open-status aria-live="polite"></span></div>
 <div class="info">
 <div class="box"><h3>Address</h3><p class="big">Car Studio<br>No. 182, Hill Street,<br>Dehiwala, Sri Lanka</p></div>
 <div class="box"><h3>Call / WhatsApp</h3><p class="big"><a href="tel:+94777711132">077 77 11132</a></p><p>+94 77 771 1132</p></div>
@@ -249,12 +249,13 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <div class="page" id="book"><section><div class="wrap">
 <div class="sh"><div><span class="eyebrow">Let's find the right fit</span><h2>Get a Quote / Installation Request</h2><p>Prepare your request here. Review it before opening WhatsApp.</p></div></div>
 <div class="booking-layout">
+<datalist id="make-list"></datalist><datalist id="model-list"></datalist>
 <form id="request-form" class="request-form">
 <div class="form-grid">
 <label>Your name<input name="customer" required maxlength="80" autocomplete="name" placeholder="Your name"></label>
 <label>Phone / WhatsApp<input name="phone" type="tel" required pattern="[+0-9\s\(\)\-]{7,20}" maxlength="20" autocomplete="tel" placeholder="077 123 4567"></label>
-<label>Vehicle make<input name="make" required maxlength="60" placeholder="Toyota, Honda, Suzuki..."></label>
-<label>Vehicle model<input name="model" required maxlength="80" placeholder="Aqua, Vezel, Wagon R..."></label>
+<label>Vehicle make<input name="make" required maxlength="60" list="make-list" autocomplete="off" placeholder="Toyota, Honda, Suzuki..."></label>
+<label>Vehicle model<input name="model" required maxlength="80" list="model-list" autocomplete="off" placeholder="Aqua, Vezel, Wagon R..."></label>
 <label>Vehicle year<input name="year" type="number" min="1950" max="2027" placeholder="2020"></label>
 <label>Upgrade / service<select name="service" id="request-service" required><option value="">Choose an upgrade</option><option>Android player installation</option><option>Dash camera installation</option><option>Interior protection film</option><option>Speaker upgrade</option><option>Subwoofer upgrade</option><option>Window / windscreen tinting</option><option>Horn installation</option><option>General product enquiry</option></select></label>
 <label>Preferred date (optional)<input name="date" id="request-date" type="date"></label>
@@ -308,6 +309,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 <dialog id="request-dialog" class="site-dialog" aria-label="Review installation request"><button class="dialog-close" onclick="closeDialog('request-dialog')" aria-label="Close request review">Close</button><span class="eyebrow">Check before you send</span><h2>Your Installation Request</h2><textarea id="request-preview" class="message-preview" readonly rows="12" aria-label="WhatsApp request preview"></textarea><p class="form-note">Opening WhatsApp does not send the message automatically. Your appointment is confirmed only after the team replies.</p><a id="send-request" class="btn w" target="_blank" rel="noopener">Continue to WhatsApp</a></dialog>
 <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <footer><div class="wrap"><span>&copy; 2026 Car Studio &middot; No. 182, Hill Street, Dehiwala</span><span>Call / WhatsApp: 077 77 11132</span></div></footer>
+<nav class="mobile-bar" aria-label="Quick contact"><a class="mb-call" href="tel:+94777711132">Call</a><a class="mb-wa" href="https://wa.me/94777711132" target="_blank" rel="noopener">WhatsApp</a><span class="open-pill" data-open-status></span></nav>
 <a class="fab" href="https://wa.me/94777711132" target="_blank" aria-label="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .1-3.3-.8-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.3 0 .5l-.3.5-.4.5c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.2z"/></svg></a>
 
 <script>
